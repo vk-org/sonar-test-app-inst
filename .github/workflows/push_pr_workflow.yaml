@@ -106,7 +106,7 @@ jobs:
       - name: "Sonar scan push"
         if: ${{ github.event_name == 'push' }}
         run: |
-          mvn clean verify --ntp sonar:sonar -DskipTests -Dsonar.branch.name=master -Dsonar.login=${SONARCLOUD_TOKEN}
+          mvn clean verify --ntp sonar:sonar -DskipTests -Dsonar.login=${SONARCLOUD_TOKEN}
 
       - name: "Slack Notification"
         id: slack_notify
