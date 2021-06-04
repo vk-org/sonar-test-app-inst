@@ -1,1 +1,0 @@
- 2javaXhr>vk-poc-test-app/src/main/java/se/atg/skeleton/VaultConfig.java

@@ -1,1 +1,0 @@
- (2javaXhrKvk-poc-test-app/src/test/java/se/atg/skeleton/SkeletonApplicationTests.java

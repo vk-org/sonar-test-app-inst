@@ -1,1 +1,0 @@
- 2xmlX_hrvk-poc-test-app/pom.xml
