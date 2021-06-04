@@ -45,13 +45,13 @@
         <module>vk-poc-test-app</module>
     </modules>
 
-    <!--url>https://github.com/atgse/mahesh-poc</url>
+    <url>https://github.com/vk-org/sonar-test-app-inst</url>
     <scm>
-        <connection>scm:git:git@github.com:atgse/mahesh-poc</connection>
+        <connection>scm:git:git@github.com:vk-org/sonar-test-app-inst</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
-        <url>https://github.com/atgse/mahesh-poc</url>
+        <url>https://github.com/vk-org/sonar-test-app-inst</url>
         <tag>HEAD</tag>
-    </scm-->
+    </scm>
 
     <distributionManagement>
         <repository>
