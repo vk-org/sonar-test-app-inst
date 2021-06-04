@@ -1,0 +1,16 @@
+target/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Emacs ###
+*~
+
+### Drone artifacts
+build-artifacts/
+.m2/
+.tags
+.semver
