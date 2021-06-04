@@ -1,0 +1,100 @@
+SonarCloud plugins:
+  - CSS Code Quality and Security 1.4.2.2002 (cssfamily)
+  - PL/SQL Code Quality and Security 3.6.1.3873 (plsql)
+  - Scala Code Quality and Security 1.8.3.2219 (sonarscala)
+  - C# Code Quality and Security 8.23.0.32424 (csharp)
+  - Vulnerability Analysis 8.9.0.11439 (security)
+  - Java Code Quality and Security 6.15.1.26025 (java)
+  - HTML Code Quality and Security 3.4.0.2754 (web)
+  - Flex Code Quality and Security 2.6.1.2564 (flex)
+  - XML Code Quality and Security 2.2.0.2973 (xml)
+  - VB.NET Code Quality and Security 8.23.0.32424 (vbnet)
+  - Swift Code Quality and Security 4.3.1.4892 (swift)
+  - CFamily Code Quality and Security 6.21.0.32709 (cpp)
+  - Python Code Quality and Security 3.5.0.8244 (python)
+  - Go Code Quality and Security 1.8.3.2219 (go)
+  - JaCoCo 1.1.1.1157 (jacoco)
+  - Kotlin Code Quality and Security 1.8.3.2219 (kotlin)
+  - Mercurial 1.1.2 (scmmercurial)
+  - T-SQL Code Quality and Security 1.5.1.4340 (tsql)
+  - Apex Code Quality and Security 1.8.3.2219 (sonarapex)
+  - JavaScript/TypeScript Code Quality and Security 7.4.3.15529 (javascript)
+  - Ruby Code Quality and Security 1.8.3.2219 (ruby)
+  - Vulnerability Rules for C# 8.9.0.11439 (securitycsharpfrontend)
+  - Vulnerability Rules for Java 8.9.0.11439 (securityjavafrontend)
+  - License for SonarLint 8.0.0.20746 (license)
+  - Vulnerability Rules for JS 8.9.0.11439 (securityjsfrontend)
+  - COBOL Code Quality 4.6.2.4876 (cobol)
+  - Vulnerability Rules for Python 8.9.0.11439 (securitypythonfrontend)
+  - Git 1.12.1.2064 (scmgit)
+  - PHP Code Quality and Security 3.17.0.7439 (php)
+  - ABAP Code Quality and Security 3.9.1.3127 (abap)
+  - Vulnerability Rules for PHP 8.9.0.11439 (securityphpfrontend)
+Global server settings:
+  - email.from=noreply@sonarcloud.io
+  - email.fromName=SonarCloud
+  - email.prefix=[SonarCloud]
+  - node_10_end_of_support_date=1620604800000
+  - node_10_grace_period_termination_date=1621814400000
+  - sonar.auth.bitbucket.enabled=true
+  - sonar.auth.microsoft.enabled=true
+  - sonar.core.id=1BD809FA-AWHW8ct9-T_TB3XqouNu
+  - sonar.core.serverBaseURL=https://sonarcloud.io
+  - sonar.core.startTime=2021-06-03T13:51:55+0200
+  - sonar.dbcleaner.weeksBeforeDeletingAllSnapshots=480
+  - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByMonth=4
+  - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByWeek=1
+  - sonar.lf.enableGravatar=true
+  - sonar.lf.logoWidthPx=105
+  - sonar.organizations.anyoneCanCreate=true
+  - sonar.organizations.createPersonalOrg=true
+  - sonar.plsql.file.suffixes=sql,tab,pkb
+  - sonar.tsql.file.suffixes=.tsql
+Project server settings:
+Project scanner properties:
+  - sonar.host.url=https://sonarcloud.io
+  - sonar.links.ci=
+  - sonar.links.homepage=https://github.com/vk-org/sonar-test-app-inst
+  - sonar.links.issue=
+  - sonar.links.scm=https://github.com/vk-org/sonar-test-app-inst
+  - sonar.links.scm_dev=scm:git:git@github.com:vk-org/sonar-test-app-inst
+  - sonar.log.level=DEBUG
+  - sonar.login=******
+  - sonar.moduleKey=se.atg.vk-poc-test:vk-poc-test
+  - sonar.modules=se.atg.vk-poc-test:vk-poc-test-app
+  - sonar.organization=vk-org
+  - sonar.projectBaseDir=/app
+  - sonar.projectBuildDir=/app/target
+  - sonar.projectDescription=Walking skeleton for GoCD OpenShift pipelines
+  - sonar.projectKey=vk-poc-test
+  - sonar.projectName=vk-poc-test
+  - sonar.projectVersion=1.0.0-SNAPSHOT
+  - sonar.scanner.app=ScannerMaven
+  - sonar.scanner.appVersion=3.9.0.2155/3.8.1
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=/app/pom.xml
+  - sonar.verbose=true
+  - sonar.working.directory=/app/target/sonar
+Scanner properties of module: se.atg.vk-poc-test:vk-poc-test-app
+  - sonar.binaries=/app/vk-poc-test-app/target/classes
+  - sonar.groovy.binaries=/app/vk-poc-test-app/target/classes
+  - sonar.java.binaries=/app/vk-poc-test-app/target/classes
+  - sonar.java.jdkHome=/usr/local/openjdk-11
+  - sonar.java.libraries=/root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.2.1.RELEASE/spring-boot-starter-actuator-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.2.1.RELEASE/spring-boot-starter-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot/2.2.1.RELEASE/spring-boot-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.2.1.RELEASE/spring-boot-starter-logging-2.2.1.RELEASE.jar,/root/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar,/root/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar,/root/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.12.1/log4j-to-slf4j-2.12.1.jar,/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar,/root/.m2/repository/org/slf4j/jul-to...
+  - sonar.java.source=1.8
+  - sonar.java.target=1.8
+  - sonar.java.test.binaries=/app/vk-poc-test-app/target/test-classes
+  - sonar.java.test.libraries=/app/vk-poc-test-app/target/classes,/root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.2.1.RELEASE/spring-boot-starter-actuator-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.2.1.RELEASE/spring-boot-starter-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot/2.2.1.RELEASE/spring-boot-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.2.1.RELEASE/spring-boot-starter-logging-2.2.1.RELEASE.jar,/root/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar,/root/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar,/root/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.12.1/log4j-to-slf4j-2.12.1.jar,/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar,/...
+  - sonar.junit.reportPaths=/app/vk-poc-test-app/target/surefire-reports
+  - sonar.junit.reportsPath=/app/vk-poc-test-app/target/surefire-reports
+  - sonar.libraries=/root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.2.1.RELEASE/spring-boot-starter-actuator-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.2.1.RELEASE/spring-boot-starter-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot/2.2.1.RELEASE/spring-boot-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE.jar,/root/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.2.1.RELEASE/spring-boot-starter-logging-2.2.1.RELEASE.jar,/root/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar,/root/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar,/root/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.12.1/log4j-to-slf4j-2.12.1.jar,/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar,/root/.m2/repository/org/slf4j/jul-to...
+  - sonar.links.homepage=https://github.com/vk-org/sonar-test-app-inst/vk-poc-test-app
+  - sonar.links.scm=https://github.com/vk-org/sonar-test-app-inst/vk-poc-test-app
+  - sonar.links.scm_dev=scm:git:git@github.com:vk-org/sonar-test-app-inst/vk-poc-test-app/vk-poc-test-app
+  - sonar.moduleKey=se.atg.vk-poc-test:vk-poc-test-app
+  - sonar.projectBaseDir=/app/vk-poc-test-app
+  - sonar.projectBuildDir=/app/vk-poc-test-app/target
+  - sonar.projectKey=se.atg.vk-poc-test:vk-poc-test-app
+  - sonar.sources=/app/vk-poc-test-app/pom.xml,/app/vk-poc-test-app/src/main/java
+  - sonar.tests=/app/vk-poc-test-app/src/test/java
+  - sonar.working.directory=/app/vk-poc-test-app/target/sonar

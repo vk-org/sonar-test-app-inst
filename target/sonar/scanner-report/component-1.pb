@@ -1,0 +1,1 @@
+vk-poc-test :B1-https://github.com/vk-org/sonar-test-app-instB1-https://github.com/vk-org/sonar-test-app-instRvk-poc-testb-Walking skeleton for GoCD OpenShift pipelines

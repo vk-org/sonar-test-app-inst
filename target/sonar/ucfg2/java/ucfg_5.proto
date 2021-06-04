@@ -1,0 +1,25 @@
+
+Bse.atg.skeleton.rest.PongController#getVersion()Ljava/lang/String;U
+K/app/vk-poc-test-app/src/main/java/se/atg/skeleton/rest/PongController.java* *("1*Þ
+1U
+K/app/vk-poc-test-app/src/main/java/se/atg/skeleton/rest/PongController.java+ +(ÔÑ
+U
+K/app/vk-poc-test-app/src/main/java/se/atg/skeleton/rest/PongController.java+ +(
+%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*'%
+#se.atg.skeleton.rest.PongController2
+getClass()ËÈ
+U
+K/app/vk-poc-test-app/src/main/java/se/atg/skeleton/rest/PongController.java+ +(&
+%1java.lang.Package"/java.lang.Class#getPackage()Ljava/lang/Package;*
+
+%0java.lang.Class2getPackage()éæ
+U
+K/app/vk-poc-test-app/src/main/java/se/atg/skeleton/rest/PongController.java+ +(A
+%2java.lang.String">java.lang.Package#getImplementationVersion()Ljava/lang/String;*
+
+%1java.lang.Package2getImplementationVersion()"q
+U
+K/app/vk-poc-test-app/src/main/java/se/atg/skeleton/rest/PongController.java+ +(B
+
+%2java.lang.StringB'%
+#se.atg.skeleton.rest.PongController
