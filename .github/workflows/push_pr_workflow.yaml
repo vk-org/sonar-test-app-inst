@@ -1,0 +1,150 @@
+name: Java CI/CD workflow
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+#  checkout:
+#    name: "Checkout the code"
+#    runs-on: ubuntu-20.04
+#    steps:
+#      - name: "Checkout code"
+#        uses: actions/checkout@v2
+#        with:
+#          path: repo
+#          fetch-depth: 0
+#      - name: "Check"
+#        run: |
+#          cd repo;
+#          ls -la;
+#          git fetch --no-tags --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master
+##          git checkout master
+#      - name: "Store repo in artifact"
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: repo
+#          path: repo/*
+
+#  build:
+#    name: "Buid Java project and deploy to Nexus"
+#    runs-on: [self-hosted, xlarge]
+#    container: maven:3.8-jdk-8-slim
+#    needs: [semver]
+#
+#    steps:
+#      - name: "Checkout code"
+#        uses: actions/checkout@v2
+#
+#      - name: Cache local Maven repository
+#        uses: actions/cache@v2
+#        with:
+#          path: /root/.m2/repository
+#          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+#          restore-keys: |
+#            ${{ runner.os }}-maven-
+#
+#      - name: "Set SNAPSHOT artefact version"
+#        if: ${{ github.event_name == 'pull_request' }}
+#        run: mvn -B versions:set -DnewVersion=${{needs.semver.outputs.new_version}}-SNAPSHOT
+#
+#      - name: "Set RELEASE artefact version"
+#        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/feature/DELCLO-552-gh-actions-java-on-self-hosted' }}
+#        run: mvn -B versions:set -DnewVersion=${{needs.semver.outputs.new_version}}
+#
+#      - name: "Build with Maven"
+#        run: mvn -B clean package --gs settings.xml
+#
+#      - name: "Push to Nexus"
+#        run: mvn -ntp deploy -Dmaven.test.skip=true -Dmaven.install.skip=true --gs settings.xml
+#        env:
+#          NEXUS_USERNAME: ${{ secrets.PUSH_NEXUS_USERNAME }}
+#          NEXUS_PASSWORD: ${{ secrets.PUSH_NEXUS_PASSWORD }}
+
+  sonar:
+    name: "Sonar scanning"
+    runs-on: [ self-hosted, xlarge ]
+    container:
+      image: maven:3.8-jdk-11
+      env:
+        SONARCLOUD_TOKEN: ${{ secrets.PROD_SONARCLOUD_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    needs: [ semver ]
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: "Check"
+        run: |
+          git branch;
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master;
+          git checkout master;
+          git branch
+
+#      - name: "Cache local Maven repository"
+#        uses: actions/cache@v2
+#        with:
+#          path: /root/.m2/repository
+#          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+#          restore-keys: |
+#            ${{ runner.os }}-maven-
+
+#      - name: "Sonar scan PR"
+#        if: ${{ github.event_name == 'pull_request' }}
+#        run: |
+#          mvn clean verify --ntp sonar:sonar -Dsonar.login=${SONARCLOUD_TOKEN} -Dsonar.organization=atgse \
+#            -Dsonar.pullrequest.key="$(echo ${GITHUB_REF} | cut -d'/' -f3)" \
+#            -Dsonar.pullrequest.branch="${GITHUB_HEAD_REF}" -Dsonar.pullrequest.provider=github \
+#            -Dsonar.pullrequest.github.repository="atgse/${GITHUB_REPOSITORY##*/}"  \
+#            -Dsonar.projectKey=atgse_vk-poc-test -Dsonar.host.url=https://sonarcloud.io  \
+#            --gs settings.xml
+
+      - name: "Sonar scan push"
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          mvn clean verify --ntp sonar:sonar -DskipTests -Dsonar.login=${SONARCLOUD_TOKEN} --gs settings.xml
+
+      - name: "Slack Notification"
+        id: slack_notify
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2.1.3
+        env:
+          SLACK_WEBHOOK: https://hooks.slack.com/services/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
+          SLACK_ICON_EMOJI: ":terraform_blue:"
+          SLACK_COLOR: "#FF0000"
+          SLACK_USERNAME: "GitHub-Actions-bot"
+          SLACK_TITLE: "Test! :warning:"
+          SLACK_MESSAGE: ""
+          SLACK_FOOTER: ""
+
+#  release:
+#    name: "Push tag and create release"
+#    concurrency:
+#      group: release
+#    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/feature/DELCLO-552-gh-actions-java-on-self-hosted' }}
+#    runs-on: ubuntu-20.04
+#    needs: [build, semver, sonar]
+#
+#    steps:
+#      - name: "Checkout code with tags"
+#        uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 0
+#
+#      - name: "Calculate the next RELEASE version and push tag"
+#        id: semantic
+#        uses: zwaldowski/semver-release-action@v2
+#        with:
+#          bump: patch
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#
+#      - name: "Create GitHub release"
+#        uses: softprops/action-gh-release@v1
+#        with:
+#          tag_name: ${{ steps.semantic.outputs.version }}
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
